@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Slightly incorrect counter</title>
+        <style type="text/css">
+            html {
+                background: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Messages counter</h1>
+
+        <div>Message count: {{.Count}}</div>
+
+        <form action="/post-message" method="POST">
+            <input type="text" name="message" placeholder="Message">
+            <div><input type="submit" value="Submit"></div>
+        </form>
+
+        <h1>Messages</h1>
+        <ol>
+        {{ range .Messages }}
+        <li>{{ . }}</li>
+        {{ end}}
+        </ol>
+    </body>
+</html>
