@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Slightly incorrect leader election</title>
+        <style type="text/css">
+            html {
+                background: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Message log</h1>
+
+        <h1>Leader {{ .Leader }}, Is leader: {{ .IsLeader }}, Leader alive: {{ .LeaderAlive }}</h1>
+
+        <form action="/append" method="POST">
+            <input type="text" name="value" placeholder="Value">
+            <div><input type="submit" value="Append"></div>
+        </form>
+
+        <h1>Messages</h1>
+        <ol>
+        {{ range .Messages }}
+        <li>{{ . }}</li>
+        {{ end}}
+        </ol>
+    </body>
+</html>
