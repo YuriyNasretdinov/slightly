@@ -11,7 +11,7 @@
     <body>
         <h1>Message log</h1>
 
-        <h1>Leader {{ .Leader }}, Is leader: {{ .IsLeader }}, Leader alive: {{ .LeaderAlive }}</h1>
+        <h1>Leader {{ .Leader }}, Is leader: {{ .IsLeader }}, Leader alive: {{ .LeaderAlive }}, Is election running: {{ .IsElectionRunning }}</h1>
 
         <form action="/append" method="POST">
             <input type="text" name="value" placeholder="Value">
